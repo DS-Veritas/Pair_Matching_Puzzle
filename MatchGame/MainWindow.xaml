@@ -1,0 +1,57 @@
+﻿<Window x:Class="MatchGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MatchGame"
+        mc:Ignorable="d"
+        Title="Find all of the matching animals" Height="450" Width="400">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!-- For the first row --> 
+        <TextBlock Grid.Row="0" RenderTransformOrigin="-1.458,0.954" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="0" RenderTransformOrigin="-1.458,0.954" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="0" RenderTransformOrigin="-1.458,0.954" Grid.Column="2" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="0" RenderTransformOrigin="-1.458,0.954" Grid.Column="3" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+
+        <!-- For the second row -->
+        <TextBlock Grid.Row="1" RenderTransformOrigin="-1.458,0.954" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="-1.458,0.954" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="-1.458,0.954" Grid.Column="2" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="-1.458,0.954" Grid.Column="3" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+
+        <!-- For the third row -->
+        <TextBlock Grid.Row="2" RenderTransformOrigin="-1.458,0.954" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="2" RenderTransformOrigin="-1.458,0.954" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="2" RenderTransformOrigin="-1.458,0.954" Grid.Column="2" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="2" RenderTransformOrigin="-1.458,0.954" Grid.Column="3" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+
+        <!-- For the fourth row -->
+        <TextBlock Grid.Row="3" RenderTransformOrigin="-1.458,0.954" Grid.Column="0" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="3" RenderTransformOrigin="-1.458,0.954" Grid.Column="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="3" RenderTransformOrigin="-1.458,0.954" Grid.Column="2" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+        <TextBlock Grid.Row="3" RenderTransformOrigin="-1.458,0.954" Grid.Column="3" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="?"/>
+
+        <!-- Ellipse Fill="Gray" Height="100" Width="75"/-->
+
+    </Grid>
+
+    <!--" StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock FontSize="18px" Text="XAML helps you design great user interfaces."/>
+        <Button Width="50" Margin="5,10" Content="I agree!"/>
+    </StackPanel-->
+</Window>
