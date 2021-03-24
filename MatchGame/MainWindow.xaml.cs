@@ -16,12 +16,17 @@ using System.Windows.Shapes;
 namespace MatchGame
 {
     using System.Windows.Threading;
+    // Include "DispatcherTimer": A timer that is integrated into the Dispatcher queue
+    // which is processed at a specified interval of time and a specified priority
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        // Also possible -> timer = new System.Windows.Threading.DispatcherTimer();
+
         int tenthOfSecondsElapsed;
         int matchesFound;
 
@@ -29,19 +34,31 @@ namespace MatchGame
         {
             InitializeComponent();
 
-            timer.Interval = TimeSpan.FromSeconds(.1);
-            timer.Tick += Timer_Tick;
+            timer.Interval = TimeSpan.FromSeconds(0.1);
+            timer.Tick += Timer_Tick; 
             SetUpGame();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             tenthOfSecondsElapsed++;
+            // setUpGame() method에서 0으로 initialize 되어 있음 그리고 1씩 increment
+            // 다만 화면상에 보이는 시간이 / 10F 를 통해서 0.s 로 표시되는 것일 뿐
+            // TenthOfSecondsElapsed 자체를 소수값으로 설정해서, 0.1씩 increment 되게 할 필요는 없음
+
+            // 더해지는 시간은 timer.Interval에 따라서 FromSeconds(.1)
+            // FromSeconds(1)로 설정하면 1초에 한번씩 update
+            // 다만 아래 Text 설정에 따라서 0.s 값이 1초에 한번씩 오르므로 재설정 필요
+
             timeTextBlock.Text = (tenthOfSecondsElapsed / 10F).ToString("0.0s");
+            // 여기서 / 10F라는 것은 더해지는 값이 0.s에 1씩 증가함을 의미
+            // 뒤에 ToString을 "0.00s" 로 설정하면 소수 두번째 자리 0은 그대로 0, 첫번째 자리만 update
+            // 즉, Timer를 제대로 설정하기 위해서는 Interval, Tick, 그리고 시간이 표시되는 Text가 consisntent 해야 함
             if(matchesFound == 8)
             {
                 timer.Stop();
                 timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
+                // timeTextBlock.Text 를 앞에 더함으로써 게임이 끝났을 때의 시간을 variable로 "- Play again?" 앞에 표시 가능
             }
         }
 
@@ -127,6 +144,8 @@ namespace MatchGame
                 SetUpGame();
                 // Resets the game if all 8 matched pairs have been found
                 // Otherwise, it does nothing because the game should be still running
+                // 8개의 pair를 모두 다 찾고 " - play again?" 이라는 textBlock 이 생성되었을 때 
+                // 하단의 시간 textBlock을 클릭 했을시에 game을 재 시작하게 하는 method
             }
         }
     }
